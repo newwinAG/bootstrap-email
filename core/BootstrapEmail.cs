@@ -22,7 +22,7 @@ namespace bootstrap_email
         /// <returns></returns>
         public static string Parse(string inHtml, string inCustomAdditionalCss = null)
         {
-            var tmpContainer= new BootstrapEmail(inHtml);
+            var tmpContainer = new BootstrapEmail(inHtml);
             tmpContainer.CustomCss = inCustomAdditionalCss;
             return tmpContainer.ParseEmailSourceAndReturn();
         }
@@ -141,13 +141,14 @@ namespace bootstrap_email
         /// <summary>
         /// Replace all nodes with the Type and the spezified Template
         /// </summary>
-        /// <param name="inNodeClass"></param>
         /// <param name="inTemplateFileName"></param>
         private void ReplaceNodesByTag(string inTag, string inTemplateFileName)
         {
-            var tmpChildNodes = DocumentBody.Descendents().Where(inItem => (inItem as IElement)?.TagName == inTag);
+            inTag = inTag.ToLower();
+            var tmpChildNodes = DocumentBody.Descendents().Where(inItem => (inItem as IElement)?.LocalName == inTag);
             foreach (IElement tmpNode in tmpChildNodes.Reverse().ToList())
             {
+                tmpNode.ClassList.Add("hr");
                 ReplaceNodeWithTemplateNode(tmpNode, inTemplateFileName);
             }
         }
@@ -219,7 +220,7 @@ namespace bootstrap_email
             var tmpChildNodes = GetNodesByFunction((inNode) => (inNode as IElement)?.ClassList.Contains(inNodeClass) == true, DocumentBody);
             foreach (IElement tmpNode in tmpChildNodes.Reverse().ToList())
             {
-                if (tmpNode.TagName == "table")
+                if (tmpNode.LocalName == "table")
                 {
                     tmpNode.ClassList.Remove(inNodeClass);
                     tmpNode.SetAttribute("align", inAlignName);
@@ -241,7 +242,7 @@ namespace bootstrap_email
             var tmpChildNodes = GetNodesByFunction((inNode) => FoundClassesWithStart(inNode, inNodeClassList).Any(), DocumentBody);
             foreach (IElement tmpNode in tmpChildNodes.ToList())
             {
-                if (tmpNode.TagName != "table")
+                if (tmpNode.LocalName != "table")
                 {
                     var tmpClasses = FoundClassesWithStart(tmpNode, inNodeClassList);
                     foreach (var tmpClass in tmpClasses)
@@ -370,7 +371,7 @@ namespace bootstrap_email
 
         private void FinishTableNodes()
         {
-            var tmpChildNodes = DocumentBody.Descendents().Where(inItem => (inItem as IElement)?.TagName == "table");
+            var tmpChildNodes = DocumentBody.Descendents().Where(inItem => (inItem as IElement)?.LocalName == "table");
             foreach (IElement tmpChild in tmpChildNodes)
             {
                 tmpChild.SetAttribute("border", "0");

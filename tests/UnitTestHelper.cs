@@ -30,13 +30,14 @@ namespace BootstrapEmailTests
 
         public static bool CompareHtmlFiles(string inHtmlFile1, string inHtmlFile2)
         {
-            var tmPRegex= new Regex("( ){2,20000}");
+            var tmPRegex = new Regex("( ){2,20000}");
             inHtmlFile1 = tmPRegex.Replace(inHtmlFile1, "");
             inHtmlFile2 = tmPRegex.Replace(inHtmlFile2, "");
             var tmpDoc1 = new HtmlParser().ParseDocument(inHtmlFile1);
             var tmpDoc2 = new HtmlParser().ParseDocument(inHtmlFile2);
 
             var tmpBody1 = tmpDoc1.Body.OuterHtml;
+            tmpBody1 = (tmpDoc1.Body.FirstChild.ChildNodes[1].ChildNodes[1].ChildNodes[1] as IElement).InnerHtml;
             var tmpBody2 = tmpDoc2.Body.OuterHtml;
 
             var tmpResult = CompareNodes(
