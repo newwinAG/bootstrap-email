@@ -1,3 +1,6 @@
 /docs/_site
 /docs/.sass-cache
 Gemfile.lock
+.vs/
+core/obj/
+core/bin/
