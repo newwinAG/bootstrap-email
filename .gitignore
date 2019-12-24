@@ -4,3 +4,5 @@ Gemfile.lock
 .vs/
 core/obj/
 core/bin/
+tests/bin/
+tests/obj/

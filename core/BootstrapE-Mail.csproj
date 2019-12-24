@@ -6,6 +6,76 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="bootstrap-email.scss" />
+    <None Remove="head.scss" />
+    <None Remove="sass\_alert.scss" />
+    <None Remove="sass\_badge.scss" />
+    <None Remove="sass\_border.scss" />
+    <None Remove="sass\_button.scss" />
+    <None Remove="sass\_card.scss" />
+    <None Remove="sass\_color.scss" />
+    <None Remove="sass\_container.scss" />
+    <None Remove="sass\_display.scss" />
+    <None Remove="sass\_functions.scss" />
+    <None Remove="sass\_grid.scss" />
+    <None Remove="sass\_hr.scss" />
+    <None Remove="sass\_image.scss" />
+    <None Remove="sass\_preview.scss" />
+    <None Remove="sass\_reboot_email.scss" />
+    <None Remove="sass\_spacing.scss" />
+    <None Remove="sass\_table.scss" />
+    <None Remove="sass\_typography.scss" />
+    <None Remove="sass\_variables.scss" />
+    <None Remove="template.html.erb" />
+    <None Remove="templates\align-center.html.erb" />
+    <None Remove="templates\align-left.html.erb" />
+    <None Remove="templates\align-right.html.erb" />
+    <None Remove="templates\body.html.erb" />
+    <None Remove="templates\col.html.erb" />
+    <None Remove="templates\container.html.erb" />
+    <None Remove="templates\div.html.erb" />
+    <None Remove="templates\hr.html.erb" />
+    <None Remove="templates\row.html.erb" />
+    <None Remove="templates\table-left.html.erb" />
+    <None Remove="templates\table.html.erb" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="bootstrap-email.scss" />
+    <EmbeddedResource Include="head.scss" />
+    <EmbeddedResource Include="sass\_alert.scss" />
+    <EmbeddedResource Include="sass\_badge.scss" />
+    <EmbeddedResource Include="sass\_border.scss" />
+    <EmbeddedResource Include="sass\_button.scss" />
+    <EmbeddedResource Include="sass\_card.scss" />
+    <EmbeddedResource Include="sass\_color.scss" />
+    <EmbeddedResource Include="sass\_container.scss" />
+    <EmbeddedResource Include="sass\_display.scss" />
+    <EmbeddedResource Include="sass\_functions.scss" />
+    <EmbeddedResource Include="sass\_grid.scss" />
+    <EmbeddedResource Include="sass\_hr.scss" />
+    <EmbeddedResource Include="sass\_image.scss" />
+    <EmbeddedResource Include="sass\_preview.scss" />
+    <EmbeddedResource Include="sass\_reboot_email.scss" />
+    <EmbeddedResource Include="sass\_spacing.scss" />
+    <EmbeddedResource Include="sass\_table.scss" />
+    <EmbeddedResource Include="sass\_typography.scss" />
+    <EmbeddedResource Include="sass\_variables.scss" />
+    <EmbeddedResource Include="template.html.erb" />
+    <EmbeddedResource Include="templates\align-center.html.erb" />
+    <EmbeddedResource Include="templates\align-left.html.erb" />
+    <EmbeddedResource Include="templates\align-right.html.erb" />
+    <EmbeddedResource Include="templates\body.html.erb" />
+    <EmbeddedResource Include="templates\col.html.erb" />
+    <EmbeddedResource Include="templates\container.html.erb" />
+    <EmbeddedResource Include="templates\div.html.erb" />
+    <EmbeddedResource Include="templates\hr.html.erb" />
+    <EmbeddedResource Include="templates\row.html.erb" />
+    <EmbeddedResource Include="templates\table-left.html.erb" />
+    <EmbeddedResource Include="templates\table.html.erb" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="PreMailer.Net" Version="2.1.3" />
     <PackageReference Include="SharpScss" Version="1.4.0" />
   </ItemGroup>

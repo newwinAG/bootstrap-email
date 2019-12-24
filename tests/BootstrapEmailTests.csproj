@@ -1,0 +1,91 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="inlined\alert.html" />
+    <None Remove="inlined\align.html" />
+    <None Remove="inlined\badge.html" />
+    <None Remove="inlined\button.html" />
+    <None Remove="inlined\card.html" />
+    <None Remove="inlined\color.html" />
+    <None Remove="inlined\container-fluid.html" />
+    <None Remove="inlined\container.html" />
+    <None Remove="inlined\display.html" />
+    <None Remove="inlined\grid.html" />
+    <None Remove="inlined\hr.html" />
+    <None Remove="inlined\integration.html" />
+    <None Remove="inlined\lyft.html" />
+    <None Remove="inlined\spacing.html" />
+    <None Remove="inlined\table.html" />
+    <None Remove="inlined\typography.html" />
+    <None Remove="preinlined\alert.html" />
+    <None Remove="preinlined\align.html" />
+    <None Remove="preinlined\badge.html" />
+    <None Remove="preinlined\button.html" />
+    <None Remove="preinlined\card.html" />
+    <None Remove="preinlined\color.html" />
+    <None Remove="preinlined\container-fluid.html" />
+    <None Remove="preinlined\container.html" />
+    <None Remove="preinlined\display.html" />
+    <None Remove="preinlined\grid.html" />
+    <None Remove="preinlined\hr.html" />
+    <None Remove="preinlined\integration.html" />
+    <None Remove="preinlined\lyft.html" />
+    <None Remove="preinlined\product-hunt.html" />
+    <None Remove="preinlined\spacing.html" />
+    <None Remove="preinlined\table.html" />
+    <None Remove="preinlined\typography.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="inlined\alert.html" />
+    <EmbeddedResource Include="inlined\align.html" />
+    <EmbeddedResource Include="inlined\badge.html" />
+    <EmbeddedResource Include="inlined\button.html" />
+    <EmbeddedResource Include="inlined\card.html" />
+    <EmbeddedResource Include="inlined\color.html" />
+    <EmbeddedResource Include="inlined\container-fluid.html" />
+    <EmbeddedResource Include="inlined\container.html" />
+    <EmbeddedResource Include="inlined\display.html" />
+    <EmbeddedResource Include="inlined\grid.html" />
+    <EmbeddedResource Include="inlined\hr.html" />
+    <EmbeddedResource Include="inlined\integration.html" />
+    <EmbeddedResource Include="inlined\lyft.html" />
+    <EmbeddedResource Include="inlined\spacing.html" />
+    <EmbeddedResource Include="inlined\table.html" />
+    <EmbeddedResource Include="inlined\typography.html" />
+    <EmbeddedResource Include="preinlined\alert.html" />
+    <EmbeddedResource Include="preinlined\align.html" />
+    <EmbeddedResource Include="preinlined\badge.html" />
+    <EmbeddedResource Include="preinlined\button.html" />
+    <EmbeddedResource Include="preinlined\card.html" />
+    <EmbeddedResource Include="preinlined\color.html" />
+    <EmbeddedResource Include="preinlined\container-fluid.html" />
+    <EmbeddedResource Include="preinlined\container.html" />
+    <EmbeddedResource Include="preinlined\display.html" />
+    <EmbeddedResource Include="preinlined\grid.html" />
+    <EmbeddedResource Include="preinlined\hr.html" />
+    <EmbeddedResource Include="preinlined\integration.html" />
+    <EmbeddedResource Include="preinlined\lyft.html" />
+    <EmbeddedResource Include="preinlined\product-hunt.html" />
+    <EmbeddedResource Include="preinlined\spacing.html" />
+    <EmbeddedResource Include="preinlined\table.html" />
+    <EmbeddedResource Include="preinlined\typography.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="nunit" Version="3.12.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.15.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\core\BootstrapE-Mail.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using AngleSharp;
@@ -404,7 +405,7 @@ namespace bootstrap_email
         /// <returns></returns>
         private string Template(string inTemplateName, IDictionary<string, string> inBinding)
         {
-            var tmpErb = LoadFile("erb", $"{inTemplateName}.html.erb");
+            var tmpErb = LoadFile("templates", $"{inTemplateName}.html.erb");
             var tmpFindRegex = new Regex("<%= *(?<Key>\\w+) *%>");
             foreach (Match tmpMatch in tmpFindRegex.Matches(tmpErb))
             {
@@ -426,7 +427,20 @@ namespace bootstrap_email
         /// <returns></returns>
         private static string LoadFile(string inFolder, string inName)
         {
-            return File.ReadAllText(Path.Combine(inFolder, inName));
+            var tmpResourceName = inName;
+            if (!string.IsNullOrWhiteSpace(inFolder))
+            {
+                tmpResourceName = $"{inFolder}.{tmpResourceName}";
+            }
+            tmpResourceName = "BootstrapE_Mail." + tmpResourceName;
+            using (Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(tmpResourceName))
+            {
+                using (StreamReader reader = new StreamReader(stream))
+                {
+                    string result = reader.ReadToEnd();
+                    return result;
+                }
+            }
         }
     }
 }
