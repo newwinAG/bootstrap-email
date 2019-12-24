@@ -13,13 +13,23 @@ namespace bootstrap_email
 {
     public class BootstrapEmail
     {
+        /// <summary>
+        /// Takes a full HTML Page and parses it to be E-Mail Programm Compatible
+        /// </summary>
+        /// <param name="inHtml"></param>
+        /// <param name="inCustomAdditionalCss"></param>
+        /// <returns></returns>
+        public static string Parse(string inHtml, string inCustomAdditionalCss = null)
+        {
+            var tmpContainer= new BootstrapEmail(inHtml);
+            tmpContainer.CustomCss = inCustomAdditionalCss;
+            return tmpContainer.ParseEmailSourceAndReturn();
+        }
+
         private string EmailSource { get; set; }
 
         private IBrowsingContext Context => BrowsingContext.New(Configuration.Default);
 
-        /// <summary>
-        /// @doc
-        /// </summary>
         private IDocument EmailHtml { get; set; }
 
         private IElement DocumentBody => EmailHtml.QuerySelector("body");
