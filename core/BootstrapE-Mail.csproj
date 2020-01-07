@@ -3,11 +3,11 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>BootstrapE_Mail</RootNamespace>
-    <AssemblyVersion>0.1.1.0</AssemblyVersion>
-    <FileVersion>0.1.1.0</FileVersion>
+    <AssemblyVersion>0.1.2.0</AssemblyVersion>
+    <FileVersion>0.1.2.0</FileVersion>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-    <Version>0.1.1</Version>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>0.1.2</Version>
     <PackageId>BootstrapEMailCSharp</PackageId>
     <Authors>Newwin SWS</Authors>
     <Company>Newwin SWS</Company>
@@ -18,7 +18,8 @@
     <RepositoryUrl>https://github.com/newwinAG/bootstrap-email</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>Bootstrap,E-Mail</PackageTags>
-    <PackageReleaseNotes>Corrected Inline CSS File handling</PackageReleaseNotes>
+    <PackageReleaseNotes>Corrected Inline CSS File handling.
+Inline CSS was missing, only Custom Css was Added to inline css.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>

@@ -91,7 +91,7 @@ namespace bootstrap_email
             var tmpMailHtml = EmailHtml.ToHtml();
 
             CustomCss = CustomCss ?? "";
-            var tmpResult = PreMailer.Net.PreMailer.MoveCssInline(tmpMailHtml, false, null,  CustomCss);
+            var tmpResult = PreMailer.Net.PreMailer.MoveCssInline(tmpMailHtml, false, null, tmpCss + " " + CustomCss);
 
             tmpMailHtml = tmpResult.Html;
 
